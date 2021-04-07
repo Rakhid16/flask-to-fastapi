@@ -16,7 +16,7 @@ def index(sentence:str):
 
 @app.get("/html_css_js/", response_class = HTMLResponse)
 def page(request : Request):
-  return templates.TemplateResponse("index.html", {"request" : request, "data" : "ini dari FastAPI"})
+  return templates.TemplateResponse("index.html", {"request" : request, "data" : "ini dari FASTAPI"})
 
 @app.post("/ml_serving")
 def ml_serving(sentence : str):
