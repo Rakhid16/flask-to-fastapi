@@ -6,7 +6,7 @@ model = load("../modeling/simple_model.pkl")
 
 @app.route("/")
 def index():
-  return {"data" : "hello world"}
+  return {"hello" : "world"}
 
 @app.route("/html_css_js/<sentence>")
 def html_css_js(sentence):
