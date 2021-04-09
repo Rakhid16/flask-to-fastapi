@@ -5,10 +5,10 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
+app.mount("/static", StaticFiles(directory="static"), name="static")    # STATIC FILES (CSS & JAVASCRIPT)
 
 model = load("../modeling/simple_model.pkl")                            # MODEL LAODED
 templates = Jinja2Templates(directory = "templates")                    # HTML FILES
-app.mount("/static", StaticFiles(directory="static"), name="static")    # STATIC FILES (CSS & JAVASCRIPT)
 
 @app.get("/{sentence}")
 def index(sentence:str):
